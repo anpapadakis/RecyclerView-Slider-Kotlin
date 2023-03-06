@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="slider_btn_size">48dp</dimen>
+    <dimen name="slider_btn_margin">6dp</dimen>
+    <dimen name="slide_dot_size">14dp</dimen>
+    <dimen name="slider_dot_margin">4dp</dimen>
+</resources>

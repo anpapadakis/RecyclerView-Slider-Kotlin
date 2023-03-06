@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dot_cv"
+    android:layout_width="@dimen/slide_dot_size"
+    android:layout_height="@dimen/slide_dot_size"
+    android:layout_margin="@dimen/slider_dot_margin"
+    android:alpha="0.5"
+    app:cardBackgroundColor="@color/light_grey"
+    app:cardCornerRadius="10dp" />

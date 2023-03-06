@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecyclerView Slider</string>
+    <string name="next_slide">next slide</string>
+    <string name="previous_slide">previous slide</string>
+</resources>
