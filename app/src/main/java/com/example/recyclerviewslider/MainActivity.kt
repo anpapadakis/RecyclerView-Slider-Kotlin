@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextBtn: ImageButton
     private lateinit var sliderDotsLayout: LinearLayout
     private lateinit var imageSliderRv: RecyclerView
+    private lateinit var imageSliderRvLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         imageSliderRv = findViewById(R.id.image_slider_rv)
         imageSliderRv.adapter = imageSliderAdapter
+        imageSliderRvLayoutManager = imageSliderRv.layoutManager as LinearLayoutManager
 
         imageSliderRv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -44,11 +46,22 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
 
-                val horizontalLayoutManager = imageSliderRv.layoutManager as LinearLayoutManager
-
-                currentItemPosition = horizontalLayoutManager.findFirstVisibleItemPosition()
+                imageSliderRv.smoothScrollToPosition(currentItemPosition)
                 setCurrentSliderDot()
                 setSliderButtons()
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                currentItemPosition =
+                    if (dx > 0) {
+                        // is scrolling right
+                        imageSliderRvLayoutManager.findLastVisibleItemPosition()
+                    } else {
+                        // is scrolling left
+                        imageSliderRvLayoutManager.findFirstVisibleItemPosition()
+                    }
             }
         })
 
