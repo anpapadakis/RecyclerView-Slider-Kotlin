@@ -10,11 +10,7 @@ class ImageSliderAdapter(private val slidesList: ArrayList<Int>) :
     RecyclerView.Adapter<ImageSliderAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageView: ImageView
-
-        init {
-            imageView = view.findViewById(R.id.slide_image_iv)
-        }
+        val imageView: ImageView = view.findViewById(R.id.slide_image_iv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
