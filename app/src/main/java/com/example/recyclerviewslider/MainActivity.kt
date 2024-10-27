@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 super.onScrollStateChanged(recyclerView, newState)
 
                 // check if is still scrolling
-                if (newState != RecyclerView.SCROLL_STATE_IDLE) {
+                if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
                     return
                 }
 
